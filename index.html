@@ -35,6 +35,7 @@
         }
     </style>
 
+    <!-- 核心：给搜索引擎和 AI 工具看的 JSON-LD 结构化数据 -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -229,6 +230,7 @@
 </head>
 <body class="bg-gray-50 text-gray-900">
 
+    <!-- 导航栏 Navigation -->
     <nav class="fixed w-full z-40 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
@@ -248,6 +250,7 @@
                         <a href="#qc-customizing" class="text-gray-600 hover:text-blue-800 px-3 py-2 font-medium">Fabrication & Coatings</a>
                         <a href="#logistics" class="text-gray-600 hover:text-blue-800 px-3 py-2 font-medium">Logistics</a>
                         <a href="#faq" class="text-gray-600 hover:text-blue-800 px-3 py-2 font-medium">FAQ</a>
+                        <a href="#" onclick="toggleLoginModal(); return false;" class="text-blue-600 hover:text-blue-800 px-3 py-2 font-bold flex items-center transition"><i class="fas fa-lock mr-1.5"></i>Portal</a>
                         <button onclick="toggleMessageForm()" class="bg-blue-800 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-900 transition focus:outline-none shadow-sm hover:shadow-md">Get a Quote</button>
                     </div>
                 </div>
@@ -260,12 +263,14 @@
                     <a href="#qc-customizing" class="text-gray-600 px-3 py-2 font-medium border-b border-gray-100">Fabrication & Coatings</a>
                     <a href="#logistics" class="text-gray-600 px-3 py-2 font-medium border-b border-gray-100">Logistics</a>
                     <a href="#faq" class="text-gray-600 px-3 py-2 font-medium border-b border-gray-100">FAQ</a>
+                    <button onclick="toggleLoginModal(); document.getElementById('mobile-menu').classList.add('hidden');" class="text-blue-600 font-bold px-3 py-2 text-left w-full focus:outline-none border-b border-gray-100"><i class="fas fa-lock mr-2"></i>System Portal</button>
                     <button onclick="toggleMessageForm(); document.getElementById('mobile-menu').classList.add('hidden');" class="text-blue-600 font-bold px-3 py-2 text-left w-full focus:outline-none">Get a Quote</button>
                 </div>
             </div>
         </div>
     </nav>
 
+    <!-- 【置顶展示】工厂实景自动滚动展示区 (Auto-scrolling Gallery) -->
     <section class="pt-20 bg-gray-900 border-b border-gray-800 overflow-hidden pb-4">
         <div class="marquee-container">
             <div class="animate-marquee gap-4 px-2">
@@ -315,6 +320,7 @@
         </div>
     </section>
 
+    <!-- 紧接其后的文字横幅 Hero Section -->
     <section class="pt-12 pb-20 hero-gradient text-white relative">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
@@ -342,6 +348,7 @@
         </div>
     </section>
 
+    <!-- 产品目录幻灯片 Products Section -->
     <section id="products" class="py-20 bg-gray-50 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10">
@@ -549,6 +556,7 @@
         </div>
     </section>
 
+    <!-- 【全面扩充】9大行业应用场景 (Project Application 3x3 Grid) -->
     <section id="applications" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -558,6 +566,7 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Application 1: Oil & Gas -->
                 <div class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-gray-100 border border-gray-200">
                     <img src="images/applications/oil-gas.jpg" alt="Oil and Gas Pipelines" class="object-cover w-full h-full transform group-hover:scale-110 transition duration-700 hidden absolute inset-0 z-0" onload="this.classList.remove('hidden');" onerror="this.classList.add('hidden');">
                     <div class="absolute inset-0 flex items-center justify-center z-0 text-gray-300"><i class="fas fa-oil-can text-9xl opacity-20"></i></div>
@@ -568,6 +577,7 @@
                     </div>
                 </div>
 
+                <!-- Application 2: Offshore & Onshore -->
                 <div class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-gray-100 border border-gray-200">
                     <img src="images/applications/offshore.jpg" alt="Offshore and Onshore Platforms" class="object-cover w-full h-full transform group-hover:scale-110 transition duration-700 hidden absolute inset-0 z-0" onload="this.classList.remove('hidden');" onerror="this.classList.add('hidden');">
                     <div class="absolute inset-0 flex items-center justify-center z-0 text-gray-300"><i class="fas fa-ship text-9xl opacity-20"></i></div>
@@ -578,6 +588,7 @@
                     </div>
                 </div>
 
+                <!-- Application 3: Civil Construction -->
                 <div class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-gray-100 border border-gray-200">
                     <img src="images/applications/construction.jpg" alt="Civil Construction and Infrastructure" class="object-cover w-full h-full transform group-hover:scale-110 transition duration-700 hidden absolute inset-0 z-0" onload="this.classList.remove('hidden');" onerror="this.classList.add('hidden');">
                     <div class="absolute inset-0 flex items-center justify-center z-0 text-gray-300"><i class="fas fa-building text-9xl opacity-20"></i></div>
@@ -588,6 +599,7 @@
                     </div>
                 </div>
 
+                <!-- Application 4: Piling Construction -->
                 <div class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-gray-100 border border-gray-200">
                     <img src="images/applications/piling-construction.jpg" alt="Piling Construction" class="object-cover w-full h-full transform group-hover:scale-110 transition duration-700 hidden absolute inset-0 z-0" onload="this.classList.remove('hidden');" onerror="this.classList.add('hidden');">
                     <div class="absolute inset-0 flex items-center justify-center z-0 text-gray-300"><i class="fas fa-hammer text-9xl opacity-20"></i></div>
@@ -598,6 +610,7 @@
                     </div>
                 </div>
 
+                <!-- Application 5: Mechanical Processing -->
                 <div class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-gray-100 border border-gray-200">
                     <img src="images/applications/mechanical-processing.jpg" alt="Mechanical Processing" class="object-cover w-full h-full transform group-hover:scale-110 transition duration-700 hidden absolute inset-0 z-0" onload="this.classList.remove('hidden');" onerror="this.classList.add('hidden');">
                     <div class="absolute inset-0 flex items-center justify-center z-0 text-gray-300"><i class="fas fa-cogs text-9xl opacity-20"></i></div>
@@ -608,6 +621,7 @@
                     </div>
                 </div>
 
+                <!-- Application 6: Mining -->
                 <div class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-gray-100 border border-gray-200">
                     <img src="images/applications/mining.jpg" alt="Mining Industry" class="object-cover w-full h-full transform group-hover:scale-110 transition duration-700 hidden absolute inset-0 z-0" onload="this.classList.remove('hidden');" onerror="this.classList.add('hidden');">
                     <div class="absolute inset-0 flex items-center justify-center z-0 text-gray-300"><i class="fas fa-hard-hat text-9xl opacity-20"></i></div>
@@ -618,6 +632,7 @@
                     </div>
                 </div>
                 
+                <!-- Application 7: Fire Safety -->
                 <div class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-gray-100 border border-gray-200">
                     <img src="images/applications/fire-safety.jpg" alt="Fire Safety" class="object-cover w-full h-full transform group-hover:scale-110 transition duration-700 hidden absolute inset-0 z-0" onload="this.classList.remove('hidden');" onerror="this.classList.add('hidden');">
                     <div class="absolute inset-0 flex items-center justify-center z-0 text-gray-300"><i class="fas fa-fire-extinguisher text-9xl opacity-20"></i></div>
@@ -628,6 +643,7 @@
                     </div>
                 </div>
 
+                <!-- Application 8: Boiler Tubes & Power -->
                 <div class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-gray-100 border border-gray-200">
                     <img src="images/applications/boiler-power.jpg" alt="Boiler Tubes and Power Generation" class="object-cover w-full h-full transform group-hover:scale-110 transition duration-700 hidden absolute inset-0 z-0" onload="this.classList.remove('hidden');" onerror="this.classList.add('hidden');">
                     <div class="absolute inset-0 flex items-center justify-center z-0 text-gray-300"><i class="fas fa-bolt text-9xl opacity-20"></i></div>
@@ -638,6 +654,7 @@
                     </div>
                 </div>
 
+                <!-- Application 9: Water Transmission -->
                 <div class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-gray-100 border border-gray-200">
                     <img src="images/applications/water-transmission.jpg" alt="Water Transmission" class="object-cover w-full h-full transform group-hover:scale-110 transition duration-700 hidden absolute inset-0 z-0" onload="this.classList.remove('hidden');" onerror="this.classList.add('hidden');">
                     <div class="absolute inset-0 flex items-center justify-center z-0 text-gray-300"><i class="fas fa-tint text-9xl opacity-20"></i></div>
@@ -652,6 +669,7 @@
         </div>
     </section>
 
+    <!-- 服务内容 (One-Stop Services) -->
     <section id="services" class="py-20 bg-gray-900 text-white border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -685,6 +703,7 @@
         </div>
     </section>
 
+    <!-- 深度 SEO 模块：质检、硬核定制加工与防腐图谱 -->
     <section id="qc-customizing" class="py-20 bg-white border-t border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -863,6 +882,7 @@
         </div>
     </section>
 
+    <!-- 全球交付与档案 (Logistics & Documentation) -->
     <section id="logistics" class="py-20 bg-gray-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -903,6 +923,7 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
     <section id="faq" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -990,6 +1011,7 @@
         </div>
     </section>
 
+    <!-- 页脚 Footer -->
     <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800 pb-28 md:pb-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
             <p class="font-bold text-white mb-2">WOMIC STEEL GROUP</p>
@@ -999,6 +1021,7 @@
         </div>
     </footer>
 
+    <!-- 右下角悬浮按钮群 (Floating Action Buttons) -->
     <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-4">
         <a href="assets/WOMIC-Brochure-2026.pdf" download class="bg-red-600 text-white p-4 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.3)] hover:scale-110 transition flex items-center group">
             <i class="fas fa-file-pdf text-xl"></i>
@@ -1015,6 +1038,7 @@
         </button>
     </div>
 
+    <!-- 留言表单弹窗 (Web3Forms 免注册直传版) -->
     <div id="message-modal" class="fixed bottom-24 right-6 w-[90vw] max-w-[340px] max-h-[80vh] bg-white rounded-2xl shadow-2xl z-50 transform scale-0 opacity-0 origin-bottom-right transition-all duration-300 pointer-events-none border border-gray-100 flex flex-col overflow-hidden">
         <div class="bg-blue-600 text-white p-4 flex justify-between items-center shrink-0">
             <h3 class="font-bold text-base"><i class="fas fa-envelope mr-2"></i> Contact Flora</h3>
@@ -1024,7 +1048,9 @@
         </div>
         <div class="overflow-y-auto flex-grow no-scrollbar bg-gray-50">
             <form class="p-5 space-y-3" onsubmit="submitMessage(event)">
-                <input type="hidden" name="access_key" value="15042ce5-8435-49d9-969a-76100223c5d3">
+                <!-- 核心：Web3Forms 的 Access Key 隐藏字段 -->
+                <!-- 👇 导师提示：请将 value 里的内容替换为你邮箱收到的真实 Key -->
+                <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
                 <input type="hidden" name="subject" value="New Project Inquiry from WOMIC STEEL Website">
                 <input type="hidden" name="from_name" value="Womic Website Form">
 
@@ -1048,6 +1074,7 @@
                     <label class="block text-xs font-semibold text-gray-600 mb-1">Requirements *</label>
                     <textarea name="Message_Requirements" id="msg-details" required class="w-full border border-gray-300 rounded-lg p-2 text-sm h-16 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 resize-none" placeholder="Specify standards, sizes, and quantity..."></textarea>
                 </div>
+                <!-- 防止机器人的隐藏字段 (Honeypot) -->
                 <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
                 <button type="submit" id="submit-btn" class="w-full bg-gray-900 text-white font-bold py-2.5 rounded-lg hover:bg-gray-800 transition shadow-md flex justify-center items-center mt-2">
@@ -1057,6 +1084,45 @@
         </div>
     </div>
 
+    <!-- 系统门户登录弹窗 (Portal Login Modal) -->
+    <div id="login-modal" class="fixed inset-0 z-[60] flex items-center justify-center bg-gray-900/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl shadow-2xl w-[90vw] max-w-sm p-6 transform scale-95 transition-transform duration-300 relative border border-gray-100">
+            <button onclick="toggleLoginModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 focus:outline-none">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <div class="text-center mb-6 mt-2">
+                <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-3">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900">System Portal</h3>
+                <p class="text-xs text-gray-500 mt-1">Authorized Access Only</p>
+            </div>
+            <form onsubmit="handlePortalLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-600 mb-1">Username</label>
+                    <div class="relative">
+                        <i class="fas fa-user absolute left-3 top-2.5 text-gray-400"></i>
+                        <input type="text" id="portal-user" required class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Enter username">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-600 mb-1">Password</label>
+                    <div class="relative">
+                        <i class="fas fa-lock absolute left-3 top-2.5 text-gray-400"></i>
+                        <input type="password" id="portal-pass" required class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="Enter password">
+                    </div>
+                </div>
+                <div id="login-error" class="hidden text-red-500 text-xs font-bold text-center mt-2 bg-red-50 py-1.5 rounded">
+                    <i class="fas fa-exclamation-circle mr-1"></i> Invalid username or password!
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white font-bold py-2.5 rounded-lg hover:bg-blue-700 transition shadow-md mt-6 flex justify-center items-center">
+                    Secure Login <i class="fas fa-sign-in-alt ml-2"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 交互脚本 -->
     <script>
         // 手机端菜单
         const btn = document.getElementById('mobile-menu-btn');
@@ -1097,7 +1163,7 @@
 
             try {
                 if (accessKeyInput === "YOUR_WEB3FORMS_ACCESS_KEY" || !accessKeyInput) {
-                    alert("⚠️ 导师提示：请先在代码里填入你邮箱收到的真实 Web3Forms Access Key 哦！");
+                    alert("⚠️ 导师提示：请先在代码第671行处填入你邮箱收到的真实 Web3Forms Access Key 哦！");
                     resetButton(submitBtn, originalBtnText);
                     return;
                 }
@@ -1136,6 +1202,57 @@
             btn.classList.remove('bg-green-600', 'bg-gray-500');
             btn.classList.add('bg-gray-900');
             btn.disabled = false;
+        }
+
+        // 登录弹窗显示/隐藏控制
+        function toggleLoginModal() {
+            const modal = document.getElementById('login-modal');
+            const modalContent = modal.querySelector('div.bg-white');
+            
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                void modal.offsetWidth; // 触发重绘以保证动画执行
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            } else {
+                modal.classList.add('opacity-0');
+                modalContent.classList.remove('scale-100');
+                modalContent.classList.add('scale-95');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    document.getElementById('login-error').classList.add('hidden'); // 重置错误提示
+                    document.getElementById('portal-user').value = ''; // 清空账号
+                    document.getElementById('portal-pass').value = ''; // 清空密码
+                }, 300);
+            }
+        }
+
+        // 处理登录与跳转验证逻辑
+        function handlePortalLogin(event) {
+            event.preventDefault();
+            const user = document.getElementById('portal-user').value;
+            const pass = document.getElementById('portal-pass').value;
+            const errorDiv = document.getElementById('login-error');
+
+            // 👇👇👇 你的专属账号密码配置在这里 👇👇👇
+            const validUser = "flora";
+            const validPass = "womic2026";
+
+            if (user === validUser && pass === validPass) {
+                errorDiv.classList.add('hidden');
+                toggleLoginModal(); // 关闭弹窗
+                // 验证成功，在新标签页打开你的 App 链接
+                window.open("https://ais-pre-bup6wu45saejcfsui4uimb-120493591784.asia-east1.run.app", "_blank");
+            } else {
+                // 验证失败，显示错误提示
+                errorDiv.classList.remove('hidden');
+                // 让弹窗抖动一下
+                const modalContent = document.querySelector('#login-modal .bg-white');
+                modalContent.classList.add('translate-x-1');
+                setTimeout(() => modalContent.classList.replace('translate-x-1', '-translate-x-1'), 100);
+                setTimeout(() => modalContent.classList.replace('-translate-x-1', 'translate-x-0'), 200);
+            }
         }
     </script>
 </body>
